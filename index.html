@@ -268,6 +268,7 @@
     if (currentAssignment>=assignments.length){break}
   }
 
+  switchAssignment(0);
 
 
   // Setup grid 10x10
@@ -557,7 +558,7 @@ function rightTurn() {
   async function executeCommand(cmd) {
     updateStatus('Executing: ' + cmd);
     cmd = cmd.trim().toUpperCase();
-    //await delay(200);
+    await delay(200);
 
     switch(cmd) {
       case 'MOVE':
