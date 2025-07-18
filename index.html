@@ -107,6 +107,7 @@
     margin:10px;
   }
   .inputset{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.2rem;
     color: #000000;
     background: #ecf0f1;
@@ -600,7 +601,7 @@ function rightTurn() {
   async function executeCommand(cmd) {
     updateStatus('Executing: ' + cmd);
     cmd = cmd.trim().toUpperCase();
-    await delay(200);
+    await delay(100);
 
     switch(cmd) {
       case 'MOVE':
@@ -647,10 +648,10 @@ function rightTurn() {
       const end = this.selectionEnd;
 
       // Set textarea value to: text before caret + tab + text after caret
-      this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+      this.value = this.value.substring(0, start) + "    " + this.value.substring(end);
 
       // Move caret
-      this.selectionStart = this.selectionEnd = start + 1;
+      this.selectionStart = this.selectionEnd = start + 4;
     }
   });
 });
