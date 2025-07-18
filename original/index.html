@@ -8,8 +8,9 @@
   /* Layout */
   body, html {
     margin: 0; padding: 0; height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #ffffff;
+    background: #f5f7fa;
     display: flex;
+    overflow: hidden;
   }
   #container {
     display: flex;
@@ -101,19 +102,7 @@
     background: #95a5a6;
     cursor: not-allowed;
   }
-  #dimensioninputs{
-    display:flex;
-    justify-content: space-around;
-    margin:10px;
-  }
-  .inputset{
-    font-size: 1.2rem;
-    color: #000000;
-    background: #ecf0f1;
-    border-radius: 6px;
-    padding: 10px;
-    margin-bottom: 15px;
-  }
+
   /* Right: grid */
   #grid-container {
     width: 40%;
@@ -121,9 +110,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-
     align-items: center;
-    overflow-x: auto;
   }
   #grid {
     display: grid;
@@ -134,9 +121,10 @@
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    margin-left:20px;
   }
   .cell {
+    width: 40px;
+    height: 40px;
     background: white;
     border-radius: 6px;
     box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
@@ -168,7 +156,6 @@
 <div id="container">
   <!-- Left Panel: Instructions -->
   <div class="panel" id="instructions">
-    <img src="imgs/logo.png" width="50%"/>
     <h2>Assignment &amp; Instructions</h2>
     <h3 id="assignmenttitle">ASSIGNMENT 2. DRAW EGG SPACE EGG SPACE EGG</h3>
     <img id="assignmentimage" src="eggspace.png" style="width:100%;">
@@ -183,6 +170,14 @@
       </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page8.html">DRAW A BIG TRIANGLE</a>
       </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page9.html">DRAW LETTER A</a>
       </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page10.html">DRAW LETTER K</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page11.html">DRAW LETTER C</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page12.html">DRAW LETTER E</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page13.html">DRAW LETTER F</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page14.html">DRAW LETTER H</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page15.html">DRAW LADDER</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page16.html">DRAW CHECKERBOARD</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page17.html">DRAW A HOUSE</a>
+      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page18.html">DRAW US FLAG</a>
     </li></ol>
 
   </div>
@@ -193,31 +188,12 @@
       <strong>Commands:</strong>
       <ul>
         <li><code>MOVE</code></li>
-        <!--<li><code>PUTEGG</code></li>
-        <li><code>TAKEEGG</code></li>-->
+        <li><code>PUTEGG</code></li>
+        <li><code>TAKEEGG</code></li>
         <li><code>LEFTTURN</code></li>
         <li><code>RIGHTTURN</code></li>
-        <li><code>RED</code></li>
-        <li><code>BLUE</code></li>
-        <li><code>YELLOW</code></li>
-        <li><code>GREEN</code></li>
-        <li><code>FOR i IN RANGE(10):</code></li>
-        <li><code>WHILE TRUE:</code></li>
-        <li><code>DEF FUNCTIONNAME():</code></li>
       </ul>
     </div>
-
-    <div id="dimensioninputs">
-      <div class="inputset">
-        <label for="rowinput">ROWS:</label>
-        <input type="number" id="rowinput" value="10" min="1"/>
-      </div>
-      <div class="inputset">
-        <label for="colinput">COLS:</label>
-        <input type="number" id="colinput" value="10" min="1"/>
-      </div>
-    </div>
-
     <textarea id="code" spellcheck="false" placeholder="Write your turtle code here..."></textarea>
     <button class="run-btn">Run</button>
   </div>
@@ -225,7 +201,7 @@
   <!-- Right Panel: Grid -->
   <div class="panel" id="grid-container">
     <button class="run-btn">Run</button>
-    <div id="grid" aria-label="Turtle grid"></div>
+    <div id="grid" aria-label="Turtle grid"><div class="cell" data-row="0" data-col="0" data-has-egg="false"></div><div class="cell" data-row="0" data-col="1" data-has-egg="false"></div><div class="cell" data-row="0" data-col="2" data-has-egg="false"></div><div class="cell" data-row="0" data-col="3" data-has-egg="false"></div><div class="cell" data-row="0" data-col="4" data-has-egg="false"></div><div class="cell" data-row="0" data-col="5" data-has-egg="false"></div><div class="cell" data-row="0" data-col="6" data-has-egg="false"></div><div class="cell" data-row="0" data-col="7" data-has-egg="false"></div><div class="cell" data-row="0" data-col="8" data-has-egg="false"></div><div class="cell" data-row="0" data-col="9" data-has-egg="false"></div><div class="cell" data-row="1" data-col="0" data-has-egg="false"></div><div class="cell" data-row="1" data-col="1" data-has-egg="false"></div><div class="cell" data-row="1" data-col="2" data-has-egg="false"></div><div class="cell" data-row="1" data-col="3" data-has-egg="false"></div><div class="cell" data-row="1" data-col="4" data-has-egg="false"></div><div class="cell" data-row="1" data-col="5" data-has-egg="false"></div><div class="cell" data-row="1" data-col="6" data-has-egg="false"></div><div class="cell" data-row="1" data-col="7" data-has-egg="false"></div><div class="cell" data-row="1" data-col="8" data-has-egg="false"></div><div class="cell" data-row="1" data-col="9" data-has-egg="false"></div><div class="cell" data-row="2" data-col="0" data-has-egg="false"></div><div class="cell" data-row="2" data-col="1" data-has-egg="false"></div><div class="cell" data-row="2" data-col="2" data-has-egg="false"></div><div class="cell" data-row="2" data-col="3" data-has-egg="false"></div><div class="cell" data-row="2" data-col="4" data-has-egg="false"></div><div class="cell" data-row="2" data-col="5" data-has-egg="false"></div><div class="cell" data-row="2" data-col="6" data-has-egg="false"></div><div class="cell" data-row="2" data-col="7" data-has-egg="false"></div><div class="cell" data-row="2" data-col="8" data-has-egg="false"></div><div class="cell" data-row="2" data-col="9" data-has-egg="false"></div><div class="cell" data-row="3" data-col="0" data-has-egg="false"></div><div class="cell" data-row="3" data-col="1" data-has-egg="false"></div><div class="cell" data-row="3" data-col="2" data-has-egg="false"></div><div class="cell" data-row="3" data-col="3" data-has-egg="false"></div><div class="cell" data-row="3" data-col="4" data-has-egg="false"></div><div class="cell" data-row="3" data-col="5" data-has-egg="false"></div><div class="cell" data-row="3" data-col="6" data-has-egg="false"></div><div class="cell" data-row="3" data-col="7" data-has-egg="false"></div><div class="cell" data-row="3" data-col="8" data-has-egg="false"></div><div class="cell" data-row="3" data-col="9" data-has-egg="false"></div><div class="cell" data-row="4" data-col="0" data-has-egg="false"></div><div class="cell" data-row="4" data-col="1" data-has-egg="false"></div><div class="cell" data-row="4" data-col="2" data-has-egg="false"></div><div class="cell" data-row="4" data-col="3" data-has-egg="false"></div><div class="cell" data-row="4" data-col="4" data-has-egg="false"></div><div class="cell" data-row="4" data-col="5" data-has-egg="false"></div><div class="cell" data-row="4" data-col="6" data-has-egg="false"></div><div class="cell" data-row="4" data-col="7" data-has-egg="false"></div><div class="cell" data-row="4" data-col="8" data-has-egg="false"></div><div class="cell" data-row="4" data-col="9" data-has-egg="false"></div><div class="cell" data-row="5" data-col="0" data-has-egg="false"></div><div class="cell" data-row="5" data-col="1" data-has-egg="false"></div><div class="cell" data-row="5" data-col="2" data-has-egg="false"></div><div class="cell" data-row="5" data-col="3" data-has-egg="false"></div><div class="cell" data-row="5" data-col="4" data-has-egg="false"></div><div class="cell" data-row="5" data-col="5" data-has-egg="false"></div><div class="cell" data-row="5" data-col="6" data-has-egg="false"></div><div class="cell" data-row="5" data-col="7" data-has-egg="false"></div><div class="cell" data-row="5" data-col="8" data-has-egg="false"></div><div class="cell" data-row="5" data-col="9" data-has-egg="false"></div><div class="cell" data-row="6" data-col="0" data-has-egg="false"></div><div class="cell" data-row="6" data-col="1" data-has-egg="false"></div><div class="cell" data-row="6" data-col="2" data-has-egg="false"></div><div class="cell" data-row="6" data-col="3" data-has-egg="false"></div><div class="cell" data-row="6" data-col="4" data-has-egg="false"></div><div class="cell" data-row="6" data-col="5" data-has-egg="false"></div><div class="cell" data-row="6" data-col="6" data-has-egg="false"></div><div class="cell" data-row="6" data-col="7" data-has-egg="false"></div><div class="cell" data-row="6" data-col="8" data-has-egg="false"></div><div class="cell" data-row="6" data-col="9" data-has-egg="false"></div><div class="cell" data-row="7" data-col="0" data-has-egg="false"></div><div class="cell" data-row="7" data-col="1" data-has-egg="false"></div><div class="cell" data-row="7" data-col="2" data-has-egg="false"></div><div class="cell" data-row="7" data-col="3" data-has-egg="false"></div><div class="cell" data-row="7" data-col="4" data-has-egg="false"></div><div class="cell" data-row="7" data-col="5" data-has-egg="false"></div><div class="cell" data-row="7" data-col="6" data-has-egg="false"></div><div class="cell" data-row="7" data-col="7" data-has-egg="false"></div><div class="cell" data-row="7" data-col="8" data-has-egg="false"></div><div class="cell" data-row="7" data-col="9" data-has-egg="false"></div><div class="cell" data-row="8" data-col="0" data-has-egg="false"></div><div class="cell" data-row="8" data-col="1" data-has-egg="false"></div><div class="cell" data-row="8" data-col="2" data-has-egg="false"></div><div class="cell" data-row="8" data-col="3" data-has-egg="false"></div><div class="cell" data-row="8" data-col="4" data-has-egg="false"></div><div class="cell" data-row="8" data-col="5" data-has-egg="false"></div><div class="cell" data-row="8" data-col="6" data-has-egg="false"></div><div class="cell" data-row="8" data-col="7" data-has-egg="false"></div><div class="cell" data-row="8" data-col="8" data-has-egg="false"></div><div class="cell" data-row="8" data-col="9" data-has-egg="false"></div><div class="cell turtle" data-row="9" data-col="0" data-has-egg="false">➡️</div><div class="cell" data-row="9" data-col="1" data-has-egg="false"></div><div class="cell" data-row="9" data-col="2" data-has-egg="false"></div><div class="cell" data-row="9" data-col="3" data-has-egg="false"></div><div class="cell" data-row="9" data-col="4" data-has-egg="false"></div><div class="cell" data-row="9" data-col="5" data-has-egg="false"></div><div class="cell" data-row="9" data-col="6" data-has-egg="false"></div><div class="cell" data-row="9" data-col="7" data-has-egg="false"></div><div class="cell" data-row="9" data-col="8" data-has-egg="false"></div><div class="cell" data-row="9" data-col="9" data-has-egg="false"></div></div>
     <div id="status">Ready</div>
   </div>
 </div>
@@ -233,34 +209,50 @@
 <script>
 
   let assignments = [
-                    "Paint a Red Dot",
-                    "5 Square Blue Line",
-                    "Rainbow Row (Red, Yellow, Green, Blue)",
-                    "2X2 Red Square",
-                    "4X4 Checkerboard (Two Colors)",
-                    "Draw a Heart",
-                    "Draw letter A",
-                    "Draw a Spiral",
-                    "Draw a House",
-                    "Draw US Flag",
+                    "DRAW 5 EGGS IN A ROW",
+                    "EGG SPACE EGG SPACE EGG",
+                    "DRAW AN EGG SQUARE 2X2",
+                    "EGG IN EVERY CORNER",
+                    "10X10 WHILE LOOP SQUARE",
+                    "5X5 FOR LOOP SQUARE",
+                    "DRAW A 10X10 WHILE LOOP SQUARE AND INSIDE DRAW A 3X3 FOR LOOP SQUARE IN THE MIDDLE",
+                    "DRAW A BIG TRIANGLE",
+                    "DRAW LETTER A",
+                    "DRAW LETTER K",
+                    "DRAW LETTER C",
+                    "DRAW LETTER E",
+                    "DRAW LETTER F",
+                    "DRAW LETTER H",
+                    "DRAW LADDER",
+                    "DRAW CHECKERBOARD",
+                    "DRAW A HOUSE",
+                    "DRAW US FLAG"
                   ];
 
   let assignmentpictures = [
-                    "reddot.png",
-                    "blueline.png",
-                    "rainbowrow.png",
-                    "red2x2.png",
+                    "5eggs.png",
+                    "eggspace.png",
+                    "egg2x2.png",
+                    "eggcorners.png",
+                    "whileloopsquare.png",
+                    "5x5forloopsquare.png",
+                    "10w3.png",
+                    "bigtriangle.png",
+                    "letterA.png",
+                    "letterK.png",
+                    "letterC.png",
+                    "letterE.png",
+                    "letterF.png",
+                    "letterH.png",
+                    "ladder.png",
                     "checkerboard.png",
-                    "heart.png",
-                    "LetterA.png",
-                    "spiral.png",
                     "house.png",
-                    "usflag.png",
+                    "flag.png"
                   ];
 
   function switchAssignment(a){
     document.getElementById("assignmenttitle").innerHTML = `ASSIGNMENT ${a+1}. ${assignments[a]}`;
-    document.getElementById("assignmentimage").src = "imgs/"+assignmentpictures[a];
+    document.getElementById("assignmentimage").src = assignmentpictures[a];
   }
 
   for (let currentAssignment in document.getElementsByClassName("assignmentlinks")){
@@ -278,41 +270,17 @@
 
   switchAssignment(0);
 
-  document.getElementById("code").oninput = function(){
-    document.getElementById("code").value = document.getElementById("code").value.replace("\t","    ");
-    console.log(document.getElementById("code").value)
-  }
 
   // Setup grid 10x10
   const grid = document.getElementById('grid');
   const status = document.getElementById('status');
-  let ROWS = 10;
-  let COLS = 10;
+  const ROWS = 10;
+  const COLS = 10;
 
   // Represent the grid as 2D array of cells
   let cells = [];
 
-  // Turtle state
-  let turtle = {
-    row: 9,  // Start bottom-left corner
-    col: 0,
-    direction: 0, // 0 = up, 90 = right, 180 = down, 270 = left
-  };
-
   function createGrid() {
-
-    ROWS = document.getElementById("rowinput").value;
-    COLS = document.getElementById("colinput").value;
-
-    if (ROWS < 1 || COLS < 1){
-      throw new Error("Invalid Canvas Dimensions!");
-    }
-
-    grid.style.gridTemplateColumns = `repeat(${COLS},${400/COLS}px)`;
-    grid.style.gridTemplateRows = `repeat(${ROWS},${400/ROWS}px)`;
-
-    turtle.row = ROWS-1;
-
     grid.innerHTML = '';
     cells = [];
     for (let r = 0; r < ROWS; r++) {
@@ -322,11 +290,6 @@
         cell.className = 'cell';
         cell.dataset.row = r;
         cell.dataset.col = c;
-
-        cell.style.width = `${400 / COLS}px`;
-        cell.style.height = `${400 / ROWS}px`;
-        cell.style.fontSize = `${240/COLS}px`;
-
         cell.dataset.hasEgg = 'false';
         grid.appendChild(cell);
         row.push(cell);
@@ -335,7 +298,12 @@
     }
   }
 
-
+  // Turtle state
+  let turtle = {
+    row: 9,  // Start bottom-left corner
+    col: 0,
+    direction: 0, // 0 = up, 90 = right, 180 = down, 270 = left
+  };
 
   function directionName(dir) {
     switch(dir % 360) {
@@ -364,15 +332,11 @@
 function drawTurtle() {
   clearGridVisuals();
 
-  console.log(ROWS, COLS);
   // Show eggs first
   for (let r = 0; r < ROWS; r++) {
     for (let c = 0; c < COLS; c++) {
       if (cells[r][c].dataset.hasEgg === 'true') {
         cells[r][c].textContent = '🥚';
-      }
-      if (cells[r][c].dataset.color){
-        cells[r][c].textContent = cells[r][c].dataset.color;
       }
     }
   }
@@ -448,12 +412,6 @@ function drawTurtle() {
     }
     cell.dataset.hasEgg = 'false';
     cell.textContent = '';
-  }
-
-  function paintColor(color){
-    const cell = cells[turtle.row][turtle.col];
-    cell.dataset.color = color;
-    cell.textContent = color;
   }
 
  // Turn left: subtract 90 degrees
@@ -617,18 +575,6 @@ function rightTurn() {
         break;
       case 'RIGHTTURN':
         rightTurn();
-        break;
-      case 'RED':
-        paintColor("🟥");
-        break;
-      case 'BLUE':
-        paintColor("🟦");
-        break;
-      case 'YELLOW':
-        paintColor("🟨");
-        break;
-      case "GREEN":
-        paintColor("🟩");
         break;
       case 'BREAK':
         throw new Error('BREAK_LOOP');
