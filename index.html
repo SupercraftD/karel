@@ -8,7 +8,7 @@
   /* Layout */
   body, html {
     margin: 0; padding: 0; height: 100vh; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f5f7fa;
+    background: #ffffff;
     display: flex;
   }
   #container {
@@ -182,14 +182,6 @@
       </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page8.html">DRAW A BIG TRIANGLE</a>
       </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page9.html">DRAW LETTER A</a>
       </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page10.html">DRAW LETTER K</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page11.html">DRAW LETTER C</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page12.html">DRAW LETTER E</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page13.html">DRAW LETTER F</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page14.html">DRAW LETTER H</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page15.html">DRAW LADDER</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page16.html">DRAW CHECKERBOARD</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page17.html">DRAW A HOUSE</a>
-      </li><li><a class="assignmentlinks" href="https://catherinewhat.github.io/page18.html">DRAW US FLAG</a>
     </li></ol>
 
   </div>
@@ -237,50 +229,34 @@
 <script>
 
   let assignments = [
-                    "DRAW 5 EGGS IN A ROW",
-                    "EGG SPACE EGG SPACE EGG",
-                    "DRAW AN EGG SQUARE 2X2",
-                    "EGG IN EVERY CORNER",
-                    "10X10 WHILE LOOP SQUARE",
-                    "5X5 FOR LOOP SQUARE",
-                    "DRAW A 10X10 WHILE LOOP SQUARE AND INSIDE DRAW A 3X3 FOR LOOP SQUARE IN THE MIDDLE",
-                    "DRAW A BIG TRIANGLE",
-                    "DRAW LETTER A",
-                    "DRAW LETTER K",
-                    "DRAW LETTER C",
-                    "DRAW LETTER E",
-                    "DRAW LETTER F",
-                    "DRAW LETTER H",
-                    "DRAW LADDER",
-                    "DRAW CHECKERBOARD",
-                    "DRAW A HOUSE",
-                    "DRAW US FLAG"
+                    "Paint a Red Dot",
+                    "5 Square Blue Line",
+                    "Rainbow Row (Red, Yellow, Green, Blue)",
+                    "2X2 Red Square",
+                    "4X4 Checkerboard (Two Colors)",
+                    "Draw a Heart",
+                    "Draw letter A",
+                    "Draw a Spiral",
+                    "Draw a House",
+                    "Draw US Flag",
                   ];
 
   let assignmentpictures = [
-                    "5eggs.png",
-                    "eggspace.png",
-                    "egg2x2.png",
-                    "eggcorners.png",
-                    "whileloopsquare.png",
-                    "5x5forloopsquare.png",
-                    "10w3.png",
-                    "bigtriangle.png",
-                    "letterA.png",
-                    "letterK.png",
-                    "letterC.png",
-                    "letterE.png",
-                    "letterF.png",
-                    "letterH.png",
-                    "ladder.png",
+                    "reddot.png",
+                    "blueline.png",
+                    "rainbowrow.png",
+                    "red2x2.png",
                     "checkerboard.png",
+                    "heart.png",
+                    "LetterA.png",
+                    "spiral.png",
                     "house.png",
-                    "flag.png"
+                    "usflag.png",
                   ];
 
   function switchAssignment(a){
     document.getElementById("assignmenttitle").innerHTML = `ASSIGNMENT ${a+1}. ${assignments[a]}`;
-    document.getElementById("assignmentimage").src = assignmentpictures[a];
+    document.getElementById("assignmentimage").src = "imgs/"+assignmentpictures[a];
   }
 
   for (let currentAssignment in document.getElementsByClassName("assignmentlinks")){
@@ -616,7 +592,7 @@ function rightTurn() {
   async function executeCommand(cmd) {
     updateStatus('Executing: ' + cmd);
     cmd = cmd.trim().toUpperCase();
-    await delay(200);
+    //await delay(200);
 
     switch(cmd) {
       case 'MOVE':
